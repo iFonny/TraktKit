@@ -14,12 +14,12 @@ public struct TraktWatchedShow: Codable {
     public let plays: Int // Total number of plays
     public let lastWatchedAt: Date?
     public let show: TraktShow
-    public let seasons: [TraktWatchedSeason]
+    //public let seasons: [TraktWatchedSeason]
     
     enum CodingKeys: String, CodingKey {
         case plays
         case lastWatchedAt = "last_watched_at"
         case show
-        case seasons
+        //case seasons
     }
 }
