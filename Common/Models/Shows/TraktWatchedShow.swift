@@ -14,7 +14,7 @@ public struct TraktWatchedShow: Codable {
     public let plays: Int // Total number of plays
     public let lastWatchedAt: Date?
     public let show: TraktShow
-    public let seasons: [TraktWatchedSeason]?
+    public let seasons: [TraktWatchedSeason]
     public let teeeeeeeeeeeeeeest: String?
     
     enum CodingKeys: String, CodingKey {
