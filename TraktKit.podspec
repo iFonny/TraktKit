@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name      = "TraktKit"
-  s.version   = "1.0.3"
+  s.version   = "1.0.4"
   s.summary   = "Swift wrapper for Trakt.tv API"
   s.homepage  = "https://github.com/iFonny/TraktKit"
 
