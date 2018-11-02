@@ -16,7 +16,7 @@ extension TraktManager {
      **Note**: If a checkin is already in progress, a `409` HTTP status code will returned. The response will contain an `expires_at` timestamp which is when the user can check in again.
      */
     @discardableResult
-    public func checkIn(movie: RawJSON?, episode: RawJSON?, completionHandler: @escaping checkinCompletionHandler) throws -> URLSessionDataTaskProtocol? {
+    public func checkIn(movie: RawJSON?, episode: RawJSON?, sharing: RawJSON?, message: String?, completionHandler: @escaping checkinCompletionHandler) throws -> URLSessionDataTaskProtocol? {
         
         // JSON
         var json: RawJSON = [
@@ -28,6 +28,14 @@ extension TraktManager {
             json["movie"] = movie
         } else if let episode = episode {
             json["episode"] = episode
+        }
+        
+        if let sharing = sharing {
+            json["sharing"] = sharing
+        }
+        
+        if let message = message {
+            json["message"] = message
         }
         
         let jsonData = try JSONSerialization.data(withJSONObject: json, options: [])
